@@ -1,16 +1,16 @@
 # Swapping the values of a and b using reference passing
-#def swap_variables(list):
-    #list[0], list[1] = list[1], list[0]
-    #list[0], list[1] = list[1], list[0]
-def swap_variables(a, b):
-    a,b = b, a
+def swap_variables(list):
+    if len(list) >= 2:
+     list[0], list[1] = list[1], list[0]
 if __name__ == "__main__":
-    print("Before swapping:")
-    print("a =", a)
-    print("b =", b)
+    with open('inputForProgram1.txt', 'r') as file:    
+       my_list = [int(x) for x in file.readline().split()]
+       print("Before swapping:")
+       print("list[0] =", list[0])
+       print("list[1] =", list[1])   
 
-swap_variables(a, b)
+    swap_variables(my_list)
 
-print("After swapping:")
-print("a =", a)
-print("b =", b)
+    print("After swapping:")
+    print("list[0] =", list[1])
+    print("list[1] =", list[0])
